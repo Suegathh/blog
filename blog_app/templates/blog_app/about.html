@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if title %}
-    <title>{{ title }}</title>
-    {% else %}
-    <title>Blog</title>
-    {% endif %}
-</head>
-<body>
-    <h1>About us!</h1>
-    <p>We are dedicated to your needs and wants. Join us now!😄</p>
-</body>
-</html>
+{% extends "blog_app/base.html" %}
+
+{% block content %}
+        <h1>About us!</h1>
+        <p>We are dedicated to your needs and wants. Join us now!😄</p>
+{% endblock %}

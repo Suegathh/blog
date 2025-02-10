@@ -1,26 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Post
 
-# Create your views here.
-blogs = [
-    {
-        "title": "The pet",
-        "author": "Sue Jym",
-        "date_created": "27-01-2025",
-        "content": "adventure"
-    },
-    {
-        "title": "The car",
-        "author": "Sue Doe",
-        "date_created": "27-01-2024",
-        "content": "Cars"
-    },
-]
+# Create your views here
 
 def home(request):
     
+    posts = Post.objects.all().order_by("-date_created")
+    print(posts)
+    
     context = {
-        "blogs" : blogs,
+        "posts" : posts,
         "title": "Home"
     }
     return render(request, "blog_app/home.html", context)
