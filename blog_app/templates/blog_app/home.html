@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Home Page</h1>
+        {% for post in blogs%}
+        <h1>{{ post.title }}</h1>
+        <h3> By {{ post.author }} at {{post.date_created}}</h3>
+        <p>{{ post.content}}</p>
+         {% endfor %}
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>Blog</title>
+    {% endif %}
+
+</head>
+<body>
+    <h1>Home Page</h1>
+    {% for post in blogs %}
+        <h1>{{ post.title }}</h1>
+        <h3>By {{ post.author }} at {{ post.date_created }}</h3>
+        <p>{{ post.content }}</p>
+    {% endfor %}
+</body>
+</html>
