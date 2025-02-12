@@ -20,6 +20,7 @@ def register(request):
 def logout_user(request):
     logout(request)
     return render(request, "users/logout.html")
+
 @login_required
 def user_profile(request):
     if request.method == "POST":
